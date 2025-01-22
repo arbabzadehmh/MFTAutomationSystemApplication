@@ -30,15 +30,29 @@ public class Contract {
     @Column(name = "description")
     private String description;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "contract_insurance_tbl",
+            joinColumns = @JoinColumn(name = "contract_id"),
+            inverseJoinColumns = @JoinColumn(name = "insurance_id"),
+            foreignKey = @ForeignKey(name = "fk_contract_insurance"),
+            inverseForeignKey = @ForeignKey(name = "fk_inverse_contract_insurance")
+    )
     private List<Insurance> insuranceList;
 
-    @OneToMany
-    private List<ContractType> contractTypeList;
+    @OneToOne
+    @JoinColumn(
+            name = "contract_type_id",
+            foreignKey = @ForeignKey(name = "fk_contract_contract_type")
+    )
+    private ContractType contractType;
 
     @OneToOne
+    @JoinColumn(
+            name = "tax_id",
+            foreignKey = @ForeignKey(name = "fk_contract_tax")
+    )
     private Tax tax;
 
-    @OneToOne
-    private TimeShift timeShift;
+
 }

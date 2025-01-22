@@ -13,17 +13,17 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @ToString
 
-@Entity(name="rulingEntity")
-@Table(name="ruling_tbl")
-public class Ruling {
+@Entity(name="administrativeRulingEntity")
+@Table(name="administrative_ruling_tbl")
+public class AdministrativeRuling {
     @Id
-    @SequenceGenerator(name = "rulingSeq",sequenceName = "ruling_seq",allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "rulingSeq")
+    @SequenceGenerator(name = "administrativeRulingSeq",sequenceName = "administrative_ruling_seq",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "administrativeRulingSeq")
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "earnings")
-    private Long earnings;
+    @Column(name = "salary")
+    private double salary;
 
     @Column(name = "type")
     private String type;

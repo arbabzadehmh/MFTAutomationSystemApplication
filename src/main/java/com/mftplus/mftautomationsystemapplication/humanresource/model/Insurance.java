@@ -25,11 +25,11 @@ public class Insurance {
     @Column(name="name")
     private String name;
 
-    @Column(name = "number")
-    private String number;
+    @Column(name = "policy_number")
+    private String policyNumber;
 
-    @Column(name="history")
-    private int history;
+    @Column(name="days_of_coverage")
+    private int daysOfCoverage;
 
     @Column(name = "type")
     private String type;

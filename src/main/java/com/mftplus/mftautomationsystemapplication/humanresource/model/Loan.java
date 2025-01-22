@@ -7,7 +7,8 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @NoArgsConstructor
 @Getter
@@ -25,22 +26,22 @@ public class Loan {
     private Long id;
 
     @Column(name = "start_date")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name="total_amount")
     private Double totalAmount;
 
-    @Column(name="count_installment")
-    private Double countInstallment;
+    @Column(name="number_of_installment")
+    private Double numberOfInstallment;
 
-    @Column(name="amount_installment")
-    private Double amountInstallment;
+    @Column(name="installment_amount")
+    private Double installmentAmount;
 
 
     @Column(name = "status")
     private String status;
 
-    @Column(name="cration_date")
-    private Date crationDate;
+    @Column(name="registration_date")
+    private LocalDate registrationDate;
 
 }

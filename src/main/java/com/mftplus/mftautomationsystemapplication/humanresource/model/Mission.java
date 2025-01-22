@@ -7,7 +7,9 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 @NoArgsConstructor
 @Getter
@@ -24,11 +26,20 @@ public class Mission {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "request_date")
+    private LocalDate requestDate;
+
     @Column(name = "start_date")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name="end_date")
-    private Date endDate;
+    private LocalDate endDate;
+
+    @Column(name = "entry_time")
+    private LocalTime entryTime;
+
+    @Column(name = "exit_time")
+    private LocalTime exitTime;
 
     @Column(name="time_extension")
     private String timeExtension;
@@ -40,20 +51,18 @@ public class Mission {
     private String destination;
 
     @Column(name = "distance")
-    private String distance;
+    private double distance;
 
-    @Column(name = "attached")
-    private String attached;
+    @Column(name = "travel_method")
+    private String travelMethod;
 
-    @Column(name = "residence")
-    private String residence;
+    @Column(name="accommodation")
+    private String accommodation;
 
-    @Column(name = "transport_type")
-    private String transportType;
-
-    @Column(name="cration_date")
-    private Date crationDate;
+    @Column(name="creation_date")
+    private LocalDate creationDate;
 
     @Column(name="description")
     private String description;
+
 }

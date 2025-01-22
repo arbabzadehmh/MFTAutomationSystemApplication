@@ -6,10 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import org.bouncycastle.asn1.x509.Time;
 
+
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
+
 
 @NoArgsConstructor
 @Getter
@@ -27,22 +28,22 @@ public class Leave {
     private Long id;
 
     @Column(name = "start_date")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name="end_date")
-    private Date endDate;
+    private LocalDate endDate;
 
-    @Column(name="start_clock")
-    private LocalTime startClock;
+    @Column(name = "start_time")
+    private LocalTime startTime;
 
-    @Column(name="end_clock")
-    private LocalTime endClock;
+    @Column(name = "end_time")
+    private LocalTime endTime;
 
     @Column(name = "status")
     private String status;
 
-    @Column(name="cration_date")
-    private Date crationDate;
+    @Column(name="registration_date")
+    private LocalDate registrationDate;
 
     @Column(name = "type")
     private String type;
