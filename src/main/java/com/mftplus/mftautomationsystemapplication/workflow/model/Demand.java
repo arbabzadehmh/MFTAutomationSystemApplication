@@ -13,13 +13,13 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @ToString
 
-@Entity(name="workFlowStatusEntity")
-@Table(name="work_flow_status_tbl")
-public class WorkFlowStatus {
+@Entity(name="demandEntity")
+@Table(name="demand_tbl")
+public class Demand {
 
     @Id
-    @SequenceGenerator(name = "workFlowStatusSeq", sequenceName = "work_flow_status_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "workFlowStatusSeq")
+    @SequenceGenerator(name = "demandSeq", sequenceName = "demand_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "demandSeq")
     @Column(name = "id")
     private Long id;
 }

@@ -13,13 +13,13 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @ToString
 
-@Entity(name="messageEntity")
-@Table(name="message_tbl")
-public class Message {
+@Entity(name="messageNotificationEntity")
+@Table(name="mesaage_notification_tbl")
+public class MessageNotification {
 
     @Id
-    @SequenceGenerator(name = "messageSeq", sequenceName = "message_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "messageSeq")
+    @SequenceGenerator(name = "messageNotificationSeq", sequenceName = "message_notification_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "messageNotificationSeq")
     @Column(name = "id")
     private Long id;
 }

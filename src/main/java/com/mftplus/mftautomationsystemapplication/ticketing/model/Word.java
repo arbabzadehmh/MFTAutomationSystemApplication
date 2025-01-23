@@ -14,13 +14,13 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @ToString
 
-@Entity(name="ticketGroupEntity")
-@Table(name="ticket_group_tbl")
-public class TicketGroup {
+@Entity(name="wordEntity")
+@Table(name="word_tbl")
+public class Word {
 
     @Id
-    @SequenceGenerator(name = "ticketGroupSeq", sequenceName = "ticket_group_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ticketGroupSeq")
+    @SequenceGenerator(name = "wordSeq", sequenceName = "word_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wordSeq")
     @Column(name = "id")
     private Long id;
 }
