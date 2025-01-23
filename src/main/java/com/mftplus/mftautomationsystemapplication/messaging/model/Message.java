@@ -1,4 +1,4 @@
-package com.mftplus.mftautomationsystemapplication.massaging.model;
+package com.mftplus.mftautomationsystemapplication.messaging.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
