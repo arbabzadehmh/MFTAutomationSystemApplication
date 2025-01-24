@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.LocalDateTime;
+
 @RestControllerAdvice
 public class ExceptionWrapper
 {
@@ -13,6 +15,12 @@ public class ExceptionWrapper
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ResponseEntity<ExceptionMessage> exceptionHandling(ServiceException serviceException)
     {
-        return null;
+        ExceptionMessage exceptionMessage = new ExceptionMessage();
+
+        exceptionMessage.setMessage("Id not found...!");
+        exceptionMessage.setError(true);
+        exceptionMessage.setTimestamp(LocalDateTime.now());
+
+        return ResponseEntity.badRequest().body(exceptionMessage);
     }
 }

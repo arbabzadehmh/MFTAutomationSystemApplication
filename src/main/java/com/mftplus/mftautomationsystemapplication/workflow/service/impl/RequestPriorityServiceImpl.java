@@ -1,5 +1,6 @@
 package com.mftplus.mftautomationsystemapplication.workflow.service.impl;
 
+import com.mftplus.mftautomationsystemapplication.workflow.exeption.ServiceException;
 import com.mftplus.mftautomationsystemapplication.workflow.model.RequestPriority;
 import com.mftplus.mftautomationsystemapplication.workflow.repository.RequestPriorityRepository;
 import com.mftplus.mftautomationsystemapplication.workflow.service.RequestPriorityService;
@@ -17,27 +18,27 @@ public class RequestPriorityServiceImpl implements RequestPriorityService
     }
 
     @Override
-    public RequestPriority create(RequestPriority priority) {
+    public RequestPriority create(RequestPriority priority) throws ServiceException {
         return null;
     }
 
     @Override
-    public RequestPriority update(RequestPriority priority) {
+    public RequestPriority update(RequestPriority priority) throws ServiceException{
         return null;
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Long id) throws ServiceException{
 
     }
 
     @Override
-    public RequestPriority findById(Long id) {
+    public RequestPriority findById(Long id) throws ServiceException{
         return null;
     }
 
     @Override
-    public List<RequestPriority> findAll() {
+    public List<RequestPriority> findAll() throws ServiceException{
         return List.of();
     }
 }

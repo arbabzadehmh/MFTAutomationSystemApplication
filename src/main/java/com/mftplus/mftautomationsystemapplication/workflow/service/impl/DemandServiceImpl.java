@@ -1,5 +1,6 @@
 package com.mftplus.mftautomationsystemapplication.workflow.service.impl;
 
+import com.mftplus.mftautomationsystemapplication.workflow.exeption.ServiceException;
 import com.mftplus.mftautomationsystemapplication.workflow.model.Demand;
 import com.mftplus.mftautomationsystemapplication.workflow.repository.DemandRepository;
 import com.mftplus.mftautomationsystemapplication.workflow.service.DemandService;
@@ -17,27 +18,27 @@ public class DemandServiceImpl implements DemandService
     }
 
     @Override
-    public Demand create(Demand demand) {
+    public Demand create(Demand demand) throws ServiceException{
         return demandRepository.save(demand);
     }
 
     @Override
-    public Demand update(Demand demand) {
+    public Demand update(Demand demand) throws ServiceException{
         return demandRepository.save(demand);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Long id) throws ServiceException{
         demandRepository.deleteById(id);
     }
 
     @Override
-    public Demand findById(Long id) {
+    public Demand findById(Long id) throws ServiceException{
         return demandRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Demand> findAll() {
+    public List<Demand> findAll() throws ServiceException {
         return demandRepository.findAll();
     }
 }
