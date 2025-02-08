@@ -49,4 +49,7 @@ public class LetterDetail {
             foreignKey = @ForeignKey(name = "fk_letter_detail_changer")
     )
     private User detailChangeUser;
+
+    @Column(name = "deleted")
+    private boolean deleted;
 }

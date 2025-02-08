@@ -4,6 +4,7 @@ import com.mftplus.mftautomationsystemapplication.correspondence.model.Letter;
 import com.mftplus.mftautomationsystemapplication.correspondence.repository.LetterRepository;
 import com.mftplus.mftautomationsystemapplication.correspondence.service.LetterService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,17 +28,18 @@ public class LetterServiceImpl implements LetterService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-        letterRepository.deleteById(id);
+        letterRepository.softDelete(id);
     }
 
     @Override
     public List<Letter> findAll() {
-        return letterRepository.findAll();
+        return letterRepository.findAllActive();
     }
 
     @Override
     public Letter findById(Long id) {
-        return letterRepository.findById(id).orElse(null);
+        return letterRepository.findActiveById(id).orElse(null);
     }
 }

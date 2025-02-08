@@ -4,6 +4,7 @@ import com.mftplus.mftautomationsystemapplication.correspondence.model.LetterPri
 import com.mftplus.mftautomationsystemapplication.correspondence.repository.LetterPriorityRepository;
 import com.mftplus.mftautomationsystemapplication.correspondence.service.LetterPriorityService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,17 +28,18 @@ public class LetterPriorityServiceImpl implements LetterPriorityService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-        letterPriorityRepository.deleteById(id);
+        letterPriorityRepository.softDelete(id);
     }
 
     @Override
     public List<LetterPriority> findAll() {
-        return letterPriorityRepository.findAll();
+        return letterPriorityRepository.findAllActive();
     }
 
     @Override
     public LetterPriority findById(Long id) {
-        return letterPriorityRepository.findById(id).orElse(null);
+        return letterPriorityRepository.findActiveById(id).orElse(null);
     }
 }

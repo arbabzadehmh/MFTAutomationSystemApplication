@@ -4,6 +4,7 @@ import com.mftplus.mftautomationsystemapplication.correspondence.model.LetterSta
 import com.mftplus.mftautomationsystemapplication.correspondence.repository.LetterStatusRepository;
 import com.mftplus.mftautomationsystemapplication.correspondence.service.LetterStatusService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,13 +28,14 @@ public class LetterStatusServiceImpl implements LetterStatusService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-        letterStatusRepository.deleteById(id);
+        letterStatusRepository.softDelete(id);
     }
 
     @Override
     public List<LetterStatus> findAll() {
-        return letterStatusRepository.findAll();
+        return letterStatusRepository.findAllActive();
     }
 
     @Override

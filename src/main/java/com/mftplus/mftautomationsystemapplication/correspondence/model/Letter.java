@@ -101,6 +101,9 @@ public class Letter {
     )
     private List<Paraph> paraphList;
 
+    @Column(name = "deleted")
+    private boolean deleted;
+
     public void addAttachment(Attachment attachment) {
         if (attachmentList == null) {
             attachmentList = new ArrayList<>();

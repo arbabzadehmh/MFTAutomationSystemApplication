@@ -53,6 +53,9 @@ public class Appeal {
     )
     private User applicator;
 
+    @Column(name = "deleted")
+    private boolean deleted;
+
     public void addLetter(Letter letter) {
         if(letterList == null) {
             letterList = new ArrayList<>();

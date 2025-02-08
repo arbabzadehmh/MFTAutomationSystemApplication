@@ -25,4 +25,7 @@ public class LetterPriority {
 
     @Column(name = "priority")
     private String priority;
+
+    @Column(name = "deleted")
+    private boolean deleted;
 }

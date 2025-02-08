@@ -4,6 +4,7 @@ import com.mftplus.mftautomationsystemapplication.correspondence.model.Paraph;
 import com.mftplus.mftautomationsystemapplication.correspondence.repository.ParaphRepository;
 import com.mftplus.mftautomationsystemapplication.correspondence.service.ParaphService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,17 +28,18 @@ public class ParaphServiceImpl implements ParaphService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-        paraphRepository.deleteById(id);
+        paraphRepository.softDelete(id);
     }
 
     @Override
     public List<Paraph> findAll() {
-        return paraphRepository.findAll();
+        return paraphRepository.findAllActive();
     }
 
     @Override
     public Paraph findById(Long id) {
-        return paraphRepository.findById(id).orElse(null);
+        return paraphRepository.findActiveById(id).orElse(null);
     }
 }

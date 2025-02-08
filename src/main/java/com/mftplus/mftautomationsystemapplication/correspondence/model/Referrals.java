@@ -40,4 +40,7 @@ public class Referrals {
 
     @Column(name = "approval")
     private boolean needApproval;
+
+    @Column(name = "deleted")
+    private boolean deleted;
 }

@@ -25,4 +25,7 @@ public class LetterStatus {
 
     @Column(name = "status")
     private String status;
+
+    @Column(name = "deleted")
+    private boolean deleted;
 }

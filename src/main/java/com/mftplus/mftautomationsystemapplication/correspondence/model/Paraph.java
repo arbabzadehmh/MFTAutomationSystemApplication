@@ -34,4 +34,7 @@ public class Paraph {
             foreignKey = @ForeignKey(name = "fk_paraph_user")
     )
     private User author;
+
+    @Column(name = "deleted")
+    private boolean deleted;
 }
