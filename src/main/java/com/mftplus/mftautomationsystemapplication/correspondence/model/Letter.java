@@ -30,10 +30,10 @@ public class Letter {
     private Long id;
 
     @Column(name = "letter_number")
-    private Long number;
+    private String number;
 
     @Column(name = "secretariat_number")
-    private Long secretariatNumber;
+    private String secretariatNumber;
 
     @Column(name = "creation_time")
     private LocalDateTime creationDateTime;

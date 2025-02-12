@@ -23,4 +23,10 @@ public class WorkFlowStepStatus {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "workFlowStepStatusSeq")
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "status")
+    private String status;
+
+    @Column(name = "deleted")
+    private boolean deleted;
 }

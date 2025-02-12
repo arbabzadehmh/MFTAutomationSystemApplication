@@ -1,5 +1,6 @@
 package com.mftplus.mftautomationsystemapplication.workflow.model;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,18 +14,18 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @ToString
 
-@Entity(name="workFlowStatusEntity")
-@Table(name="work_flow_status_tbl")
-public class WorkFlowStatus {
+@Entity(name="workFlowStepTitleEntity")
+@Table(name="work_flow_step_title_tbl")
+public class WorkFlowStepTitle {
 
     @Id
-    @SequenceGenerator(name = "workFlowStatusSeq", sequenceName = "work_flow_status_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "workFlowStatusSeq")
+    @SequenceGenerator(name = "workFlowStepTitleSeq", sequenceName = "work_flow_step_title_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "workFlowStepTitleSeq")
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "status")
-    private String status;
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "deleted")
     private boolean deleted;
